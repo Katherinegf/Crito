@@ -1,0 +1,72 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<!-- FOOTER SECTION -->
+    
+    <footer class="footer">
+        <section class ="footer-section">
+        @{
+            IPublishedContent bgLinesRightImage = Umbraco.Media(1184);
+            var bgLinesRightImageUrl = bgLinesRightImage.GetCropUrl("background-lines-white-right");
+            <img class ="background-lines-white-right" 
+                src="@bgLinesRightImageUrl" 
+                alt="background effect, white line on the right side">
+        }
+        <div class="container">
+            <div class="logo">
+                @{
+                    IPublishedContent image = Umbraco.Media(1181);
+                    var imageUrl = image.GetCropUrl("logotype");
+                    <img src="@imageUrl" alt="" />
+                }
+                <p>Lores ipsum dolor sit amet consectetur adispisicing elit. Placeat obcaecati voluptas voluptates!</p>
+            </div>
+            <div>
+                 <h5>Company</h5>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">Career</a></li>
+        </ul>
+            </div>
+            <div>
+                 <h5>Help</h5>
+        <ul>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Delivery Details</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+            </div>
+            <div>
+                 <h5>Resources</h5>
+        <ul>
+            <li><a href="#">Free eBooks</a></li>
+            <li><a href="#">Development Tutorial</a></li>
+            <li><a href="#">How to - Blog</a></li>
+            <li><a href="#">Youtube Playlist</a></li>
+        </ul>
+            </div>
+            <div>
+                 <h5>Link</h5>
+        <ul>
+            <li><a href="#">Free eBook</a></li>
+            <li><a href="#">Development Tutorial</a></li>
+            <li><a href="#">How to - Blog</a></li>
+            <li><a href="#">Youtube Playlist</a></li>
+        </ul>
+            </div>
+        </div>
+        </section>
+        <section class = "copyright-section">
+            <div class = "container">
+                <div>© @DateTime.Now.Year 2023 Crito - Consulting Company Inc. All Rights Reserved.</div>
+                <div class = "social-media">
+                    <a href="https://facebook.com" target="_blank"><i class = "fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+    </footer>
