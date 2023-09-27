@@ -198,6 +198,33 @@ html, body {
     background-color: rgba(25, 25, 25);
     }
     
+    .item-pagination {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    
+    .item-pagination .item-link{
+        color:#191919;
+        margin:4px;
+        border:1px solid rgba(25,25,25,0.1);
+        border-radius:5px 5px 5px 5px;
+        padding:6px, 16px;
+        font-size: 1em;
+        text-decoration:none;
+    }
+    
+        .item-pagination .item-link .active, .item-pagination .item-link{
+            background-color:#191919;
+            color:#FFFFFF;
+        }
+        .item-pagination .item-link .link-prev {
+            margin-right:15px;
+        }
+    .item-pagination .item-link.link-next{
+        margin-left:15px;
+    }
+    
 
 
 .header {
@@ -832,9 +859,8 @@ html, body {
     }
 
 .article-section .container .articles {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     margin-top: 40px;
     }
