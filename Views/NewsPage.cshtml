@@ -1,55 +1,92 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.PublishedContent;
 @{
-	Layout = "LayoutWithBreadcrumb.cshtml";
+    Layout = "LayoutWithBreadcrumb.cshtml";
+
+    var itemsPerPage = 3;
+    var pageNumber = 1;
+
+    if (!int.TryParse(Context.Request.Query["page"], out pageNumber))
+        pageNumber = 1;
+
+
+    var selection = Umbraco?.Content(Guid.Parse("f5349b79-d409-41d6-a344-1aee660d0061"))?
+    .ChildrenOfType("newsItemPage")?
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate).ToList();
+
+    var totalItems = selection?.Count() ?? 0;
+    var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
+
+
+
 }
+
+
 <!--ARTICLE_SECTION-->
 <section class="article-section">
     <div class="container">
-        <div class="section-title">Article & News</div>
         <div class="browse-news">
-            <h2>Get Every Single Article & News</h2>
-            <a class="btn-outline-dark" href="#">Browse Articles<i class="fa-solid fa-arrow-up-right"></i></a>
+            <h2>Our News & Articles</h2>
         </div>
         <div class="articles">
-            <a href="#" class="article">
-                <div class="article-date">
-                    <div class="day">13</div>
-                    <div class="month"></div>
-                </div>
-                <img src="images/images/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg" alt="">
-                <p class="category">Business</p>
-                <H5>How To Use Digitalization In The Classroom</H5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut voluptatibus impedit, ea dicta blanditiis itaque quod, inventore dolorem eligendi architecto quidem vel similique officiis? Praesentium quae velit nostrum veniam non.</p>
-            </a>
-            <a href="#" class="article">
-                <div class="article-date">
-                    <div class="day">13</div>
-                    <div class="month">Mar</div>
-                </div>
-                <img src="images/images/emiliano-vittoriosi-vEN1bsdSjxM-unsplash.jpg" alt="">
-                <p class="category">Business</p>
-                <h5>How To Implement Chat GPT In Your Projects</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae hic cumque et expedita quas magni. Sit debitis nesciunt consequuntur deleniti nemo porro repellendus fuga repellat fugiat dicta? Eaque, adipisci inventore.</p>
-            </a>
-            <a href="#" class="article">
-                <div class="article-date">
-                    <div class="day">13</div>
-                    <div class="month">Mar</div>
-                </div>
-                <img src="images/images/kobu-agency-ipARHaxETRk-unsplash.jpg" alt="">
-                <p class="category">Business</p>
-                <h5>The Guide To Support Modern CSS Design</h5>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam nemo fugiat adipisci repellat recusandae laboriosam officia odit sequi quae cum consequatur, eos facilis? Nihil eveniet quam enim veniam qui tempore!</p>
-            </a>
+           
+            @if (pagedItems != null)
+            {
+
+                @foreach (var item in pagedItems!)
+                {
+
+                    var url = item.Url();
+                    var date = item.CreateDate;
+                    var image = item.Value<IPublishedContent>("newsImage");
+                    var category = item.Value("newsCategory");
+                    var title = item.Name();
+                    var preamble = item.Value("newsPreamble");
+
+                    <a href="@url" class="article">
+                        <div class="article-date">
+                            <div class="day">@date.ToString("dd")</div>
+                            <div class="month">@date.ToString("MMM")</div>
+                        </div>
+                        <img src="@image?.Url()" alt="">
+                        <p class="category">@category</p>
+                        <H5>@title</H5>
+                        <p>@preamble</p>
+                    </a>
+                }
+            }
+ 
         </div>
-        <div class="dot-circles">
-            <div class="dot-circle active"></div>
-            <div class="dot-circle"></div>
-            <div class="dot-circle"></div>
-            <div class="dot-circle"></div>
-            <div class="dot-circle"></div>   
-        </div>
+
+        <nav class="item-pagination" aria-label="Page-navigation">
+            @if (pageNumber > 1)
+            {
+                <a href="?page=@(pageNumber -1)" class="item-link link-prev" aria-label="Previous">
+                    <span aria-hidden="true"><i class="fa-sharp fa-solid  fa-chevron-left"></i></span>
+                </a>
+            }
+
+            @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++) {
+
+                if (i == pageNumber)
+                {
+                    <a href="#" class="item-link active">@i</a>
+                }
+                else
+                {
+                    <a href="?page=@i" class="item-link">@i</a>
+                }  
+            }
+            @if (pageNumber < Math.Ceiling((decimal)totalItems / itemsPerPage))
+            {
+                <a href="?page=@(pageNumber + 1)" class="item-link link-next" aria-label="Next">
+                    <span aria-hidden="true"><i class="fa-sharp fa-solid fa-chevron-right"></i></span>
+                </a>
+            }
+          
+        </nav>        
     </div>
 </section>

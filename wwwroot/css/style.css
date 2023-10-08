@@ -3,10 +3,17 @@
 
 
 html, body {
-    font-family:'Inter', sans-serif;
+    font-family:"Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     }
+    
+.wrapper {
+    height:100dvh;
+    display: flex;
+    flex-direction: column;
+}
+    
 
 .btn-theme {
     display: flex;
@@ -137,11 +144,11 @@ html, body {
 
 
 .section-title {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: #F94D1C;
     font-size: 18px;
     font-weight: 500;
-    }
+}
 
 .background-lines {
     position: absolute;
@@ -184,7 +191,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    }
+}
 
 .dot-circles .dot-circle {
     height: 12px;
@@ -196,42 +203,41 @@ html, body {
 
 .dot-circles .dot-circle.active {
     background-color: rgba(25, 25, 25);
-    }
-    
-    .item-pagination {
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
-    
-    .item-pagination .item-link{
-        color:#191919;
-        margin:4px;
-        border:1px solid rgba(25,25,25,0.1);
-        border-radius:5px 5px 5px 5px;
-        padding:6px, 16px;
-        font-size: 1em;
-        text-decoration:none;
-    }
-    
-        .item-pagination .item-link .active, .item-pagination .item-link{
-            background-color:#191919;
-            color:#FFFFFF;
         }
-        .item-pagination .item-link .link-prev {
-            margin-right:15px;
-        }
-    .item-pagination .item-link.link-next{
-        margin-left:15px;
-    }
-    
 
+.item.pagination {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.item-pagination .item-link {
+    color:#191919;
+    margin:4px;
+    border:1px solid rgba(25, 25, 25, 0.1);
+    border radius: 5px 5px 5px 5px;
+    padding: 6px 16px;
+    font-size:1em;
+    text-decoration:none;
+}
+.item-pagination .item-link.active, .item-pagination .item-link:hover {
+    background-color:#191919;
+    color: #FFFFFF;
+}
+.item-pagination .item-link.link-prev {
+    margin-right: 15px;
+}
+.item-pagination .item-link.link-next {
+    margin-left: 15px;
+}
 
 .header {
     color: #191919;
     background-color: #F0EFE9;
     position: relative;
     z-index: 0;
+}
+    .main {
+        flex: 1;
     }
 
 .nav-section {
@@ -312,17 +318,17 @@ html, body {
     flex: 1;
     }
 
-.showcase-section .container .content-column h1 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 76px;
-    font-weight: 700;
+    .showcase-section .container .content-column h1 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 76px;
+        font-weight: 700;
     }
 
 .showcase.section .container .content-column p {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 76px;
     font-weight: 400;
-    }
+}
             
 .showcase-section .container .content-column .button-links {
     display: flex;
@@ -431,10 +437,10 @@ html, body {
     padding: 20px 50px 20px 20px;
     }
 
- .about-section .container .umb-block-list .image-column .image-quote h4 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    .about-section .container .umb-block-list .image-column .image-quote h4 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
     }
 
 .about-section .container .umb-block-list .image-column .image-quote h4  span {
@@ -443,7 +449,7 @@ html, body {
     }
 
 .about-section .container .image-column .image-quote p {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 600;
     }
@@ -492,12 +498,12 @@ html, body {
     margin-bottom: 15px;
     }
 
-.service-section .container h2 {
-    width: 40%;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 45px;
+    .service-section .container h2 {
+        width: 40%;
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 45px;
     }
 
 .service-section .container .service-boxes .umb-block-list{
@@ -518,14 +524,14 @@ html, body {
     height: 2px;
     margin-bottom: 30px;
     }
-.service-section .container .service-boxes .umb-block-list .service-box h4 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
+    .service-section .container .service-boxes .umb-block-list .service-box h4 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
     }
 
 .service-section .container .service-boxes .umb-block-list .service-box p {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     }
@@ -562,12 +568,12 @@ html, body {
     margin-bottom: 15px;
     }
 
-       
-.chooseus-section .container h2 {
-    font-family: 'DM sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 45px;
+
+    .chooseus-section .container h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 45px;
     }
 
        
@@ -599,15 +605,15 @@ html, body {
     justify-content: center;
     grid-area: img;
     }
-.chooseus-section .container .content-column ul li h5 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    grid-area: title;
+    .chooseus-section .container .content-column ul li h5 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        grid-area: title;
     }
 
 .chooseus-section .container .content-column ul li p {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     grid-area: text;
@@ -638,11 +644,11 @@ html, body {
     margin-bottom: 15px;
     }
 
-.project-section .container h2 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 75px;
+    .project-section .container h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 75px;
     }
         
 .project-section .container .project-grid {
@@ -666,13 +672,13 @@ html, body {
     object-fit: cover;
     }
 
-.project-section .container .project-grid .project  h5 {
-    text-align: left;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    padding: 30px 0 15px 0;
-    border-bottom: 1px solid rgba(25, 25, 25, 0.1);
+    .project-section .container .project-grid .project h5 {
+        text-align: left;
+        font-family: "DM Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        padding: 30px 0 15px 0;
+        border-bottom: 1px solid rgba(25, 25, 25, 0.1);
     }
 
 .project-section .container .project-grid .project p {
@@ -681,7 +687,7 @@ html, body {
     justify-content: flex-end;
     align-items: center;
     text-decoration: none;
-    font-family:'Inter', sans-serif ;
+    font-family:"Inter", sans-serif ;
     font-size: 14px;
     font-weight: 500;
     color: #191919;
@@ -720,11 +726,11 @@ html, body {
     padding-bottom: 40px;
     }
 
-.team-section .container .browse-team h2 {
-    flex: 1;
-    font-family: 'Dm Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
+    .team-section .container .browse-team h2 {
+        flex: 1;
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
     }
     
 
@@ -741,14 +747,14 @@ html, body {
     object-fit: cover;
     }
 
-.team-section .container .team-members .member h5 {
-    font-family: 'DM sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin: 30px 0 0 0;
+    .team-section .container .team-members .member h5 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 30px 0 0 0;
     }
 .team-section .container .team-members .member p{
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     }
@@ -772,11 +778,11 @@ html, body {
     margin-bottom: 15px;
     }
 
-.testimonial-section .container .section-border h2 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 50px;
+    .testimonial-section .container .section-border h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 50px;
     }
 
 .testimonial-section .container .section-border .testimonials {
@@ -814,17 +820,17 @@ html, body {
     margin-top: 15px;
     }
 
-.testimonial-section .container .section-border .testimonials .testemonial .writer h5 {
-    grid-area: name;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin: 30px 0 0 0;
+    .testimonial-section .container .section-border .testimonials .testemonial .writer h5 {
+        grid-area: name;
+        font-family: "DM Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 30px 0 0 0;
     }
 
 .testimonial-section .container .section-border .testimonials .testemonial .writer p {
     grid-area: position;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #F94D1C;
@@ -851,25 +857,25 @@ html, body {
     padding-bottom: 40px;
     }
 
-.article-section.container .browse-news h2 {
-    flex: 1;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
+    .article-section.container .browse-news h2 {
+        flex: 1;
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
     }
 
 .article-section .container .articles {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
-    margin-top: 40px;
+    margin-bottom: 40px;
     }
 
 .article-section .container .articles .article {
     position: relative;
     text-decoration: none;
     color: #191919;
-    border: 1px solid rgba(25, 25, 25, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 20px;
     transition: border 0.15s ease-in-out;
     }
@@ -887,15 +893,15 @@ html, body {
     flex-direction: column;
     }
 
-.article-section .container .articles .article .article-date .day {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    .article-section .container .articles .article .article-date .day {
+        font-family: "DM Sans", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
     }
 
 .article-section .container .articles .article .article-date .month {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     }
@@ -903,26 +909,27 @@ html, body {
 .article-section .container .articles .article img {
     height: 230px;
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     }
 .article-section .container .articles .article .category {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     margin-top: 20px;
     }
 
 .article-section .container .articles .article h5 {
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 20px;
     }
 
-.article-section .container .articles .article p {
-    font-family: 'Courier New', Inter, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+    .article-section .container .articles .article p {
+        font-family: "Courier New", Inter, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
     }
                
  .article-section .container .articles .article:hover {
@@ -943,11 +950,11 @@ html, body {
     align-items: center;
     }
 
-.newsletter-section .container h2 {
-    flex: 1;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
+    .newsletter-section .container h2 {
+        flex: 1;
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
     }
 
 .newsletter-section .container form {
@@ -987,13 +994,13 @@ html, body {
     margin-left: 20px;
     font-weight: 700;
     }
-        
 
- .pagetitle-section .container h2 {
-    flex: 1;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
+
+    .pagetitle-section .container h2 {
+        flex: 1;
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
     }
 
 
@@ -1040,7 +1047,7 @@ html, body {
 
 .contactform-section .container {
     color :#191919;
-    background-color: F0EFE9;
+    background-color: #F0EFE9;
     text-align: center;
     padding: 40px;
     display: flex;
@@ -1049,11 +1056,11 @@ html, body {
     align-items: center;
     }
 
-.contactform-section .container h2 {
-    font-family:'DM Sans', sans-serif;
-    font-size: 45px;
-    font-weight: 700;
-    width: 40%;
+    .contactform-section .container h2 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 45px;
+        font-weight: 700;
+        width: 40%;
     }
 .contactform-section .container form {
     width: 100%;
@@ -1138,11 +1145,11 @@ html, body {
     margin: 0;
    }
 
-.footer .footer-section .container ul  li {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 10px;
+    .footer .footer-section .container ul li {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
     }
 
 .footer .footer-section .container ul li a {
@@ -1154,12 +1161,12 @@ html, body {
     text-decoration: underline;
     color: #FFFFFF;
     }
-                
-.footer .copyright-section {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 20px 0;
+
+    .footer .copyright-section {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 20px 0;
     }
 
 .footer .copyright-section .container {
@@ -1176,5 +1183,90 @@ html, body {
 .footer .copyright-section .container .social-media a:hover {
     color: #99999999;
     }
+.articleitem-section {
+    position: relative;
+    z-index: 0;
+    padding: 60px 0 60px 0;
+}
+
+.articleitem-section .container .metadata {
+    width: 50%;
+}
+.articleitem-section .container .metadata h2 {
+    flex: 1;
+    font-family: "DM Sans", sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+}
+.articleitem-section .container .metadata .article-details {
+    display: flex;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+.articleitem-section .container .metadata .article-details i {
+    margin: 0 20px;
+    font-size: 10px;
+    color: #F9D783;
+} 
+.articleitem-section .container .article {
+    display: flex;
+    -moz-column-gap: 100px;
+    column-gap: 100px;
+}
+.articleitem-section .container .article .content {
+    flex: 2;
+    margin-bottom: 40px;
+    font-family: "Inter", sans-serif;
+}
+.articleitem-section .container .article .content .article-image {
+    margin-bottom: 30px;
+    width: 100%;
+}
+.articleitem-section .container .article .content .tags {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+}
+.articleitem-section .container .article .content .tags span {
+    color: #191919;
+    background-color: #F3F3F3;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-right: 12px;
+}
+.articleitem-section .container .article aside{
+    flex:1;
+}
+.articleitem-section .container .article aside .searchbox {
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: #F3F3F3;
+    border-radius: 25px;
+    height: 56px;
+} 
+.articleitem-section .container .article aside .searchbox i{
+    position: absolute;
+    left: 40px;
+    top: 18px;
+    font-size: 1.3em;
+}
+.articleitem-section .container .article aside .searchbox input {
+    padding-left: 80px;
+    background-color : #F3F3F3;
+    border-radius: 25px;
+    height: 56px;
+    width: 100%;
+    outline: none;
+    border: none;
+}
     
                 
