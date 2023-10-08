@@ -2,7 +2,9 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "LayoutWithBreadcrumb.cshtml";
+    Layout = "LayoutWithBreadcrumb.cshtml";
+
+    var contactForm = new Crito.Models.ContactForm();
 }
 
 <!--CONTACTINFO-SECTION-->
@@ -39,17 +41,20 @@
 <section class="contactform-section">
     <div class="container">
         <h2>Leave us a message for any information</h2>
-        <form action asp-controller="" asp-action="" method="post" noValidate>
-            <div asp-validation-summary ="ModelOnly"></div>
+
+        @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+        {
+        
+            <div asp-validation-summary ="All"></div> // if I write All instead of ModelOnly then I will get a list back
             
-            <input asp-form ="" type="text" placeholder="Name">
-            <input asp-form ="" type="email" placeholder="Email">
-            <textarea asp-form="" placeholder="Your Message"></textarea>
+            <input asp-for ="@contactForm.Name" type="text" placeholder="Name">
+            <input asp-for ="@contactForm.Email" type="email" placeholder="Email">
+            <textarea asp-for="@contactForm.Message" placeholder="Your Message"></textarea>
             
             <div class="d-grid">
                 <button type="submit" class="btn-theme">Send Message<i class="fa-solid fa-arrow-up-right"></i></button>
             </div>
-        </form>
+       }
     </div>
 </section>
 

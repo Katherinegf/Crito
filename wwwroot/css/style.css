@@ -205,7 +205,8 @@ html, body {
     background-color: rgba(25, 25, 25);
         }
 
-.item.pagination {
+.item-pagination {
+    margin:auto;
     display:flex;
     justify-content:center;
     align-items:center;
